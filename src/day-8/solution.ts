@@ -74,11 +74,7 @@ const traverseP2 = () => {
         }
     }
 
-    let least = 1;
-    for (let lastMove of lastMoves) {
-        least = lcm(least, lastMove.moveCount);
-    }
-    return least;
+    return lastMoves.reduce((acc, lastMove) => lcm(acc, lastMove.moveCount), 1);
 };
 
 const gcd = (a: number, b: number): number => {
